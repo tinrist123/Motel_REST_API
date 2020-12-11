@@ -1,0 +1,24 @@
+{
+  "category" : [
+    {
+      "room_type" : "Notshared",
+      "name" : "Phòng cho thuê"
+    },
+    {
+      "room_type" : "Shared",
+      "name" : "Phòng ở ghép"
+    },
+    {
+      "room_type" : "Dormitory",
+      "name" : "Kí túc xá"
+    },
+    {
+      "room_type" : "House",
+      "name" : "Nhà nguyên căn"
+    },
+    {
+      "room_type" : "Apartment",
+      "name" : "Căn hộ"
+    }
+  ]
+}

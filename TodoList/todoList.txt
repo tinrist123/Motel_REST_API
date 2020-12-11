@@ -1,0 +1,18 @@
+// Làm xong migrate DB, Nhưng cần phải chạy hiều
+// hot/Fix Migrate Làm trong 1 hàm và gọi 1 lần
+
+
+// Làm API cho web site
+// Làm Search Egine , Elastic Search
+// Add lai full_address de lam Filter
+
+
+
+
+
+
+// Lam FE
+
+// LAM CMS
+
+// LAM MERCHANT APP
