@@ -26,10 +26,11 @@ mongoose.connect(
       // MigrateUtils();
       // MigrateMotelCate();
       // MigrateRoleUser();
+
     }
     // The second
     {
-      // createFakeUser ();
+      //  createFakeUser ();
     }
     // The third
     {
