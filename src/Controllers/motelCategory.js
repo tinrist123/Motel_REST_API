@@ -1,5 +1,6 @@
 const MotelCategory = require('../models/MotelCategory');
 
+
 module.exports = {
     GetAllCategory : async (req, res) => {
         try{
@@ -34,7 +35,17 @@ module.exports = {
         }
     },
 
-    UpdateCateById : async function(req,res){
+    UpdateCateById : async (req,res,next) => {
+        try {
+            const id = req.params.categoryId;
+            const updates = req.body;
+            const option = { new: true };
+    
+            const result = await MotelCategory.findByIdAndUpdate(id, updates, option);
+            res.send(result);
+        } catch (err) {
+            res.json({message: err});
+        }
     },
 
     DeleteCateById : async (req,res) => {

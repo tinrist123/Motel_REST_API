@@ -12,12 +12,13 @@ const utilitiesRoute = require ('./src/routes/utilities');
 const categoryRoute = require ('./src/routes/motelCategory');
 const roleUserRoute = require ('./src/routes/roleUser');
 const motelRoute = require ('./src/routes/motel');
-
+const userRoute = require('./src/routes/user');
 //ROUTES
 app.use('/utilities', utilitiesRoute);
 app.use('/category', categoryRoute);
 app.use('/roleUser', roleUserRoute);
 app.use('/motel', motelRoute);
+app.use('/user', userRoute);
 // app.use('/utilities', userRoute);
 // app.use('/utilities', motelCategoryRoute);
 // app.use('/utilities', fullAddressRoute);
@@ -33,7 +34,9 @@ app.get('/',(req,res) => {
 //connect to DB
 mongoose.connect( 
     process.env.DB_CONNECTION, 
-    { useNewUrlParser: true } , 
+    { useNewUrlParser: true,
+      useFindAndModify:false,
+      useUnifiedTopology: true } , 
     () => {console.log('connect to DB')}
 );
 

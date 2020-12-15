@@ -4,31 +4,20 @@ const router = express.Router();
 const Controller = require('../Controllers/index')
 
 
-//GET ALL CATEGORIES
+//GET ALL ROLES
 router.get('/', Controller.Role_Controller.getAllRoleUser);
 
-//POST UTILITIES
+//POST ROLE
 router.post('/', Controller.Role_Controller.postRoleUser);
 
-//SPECIFIC UTILITIES
+//SPECIFIC ROLE
 router.get('/:roleUserId',Controller.Role_Controller.getRoleUserById);
 
-//DELETE UTILITIES
+//DELETE ROLE
 router.delete('/:roleUserId', Controller.Role_Controller.deleteRoleUser);
 
-
-//UPDATE UTILITIES
-// router.patch('/:utilitiesId',async (req,res) => {
-//     try{
-//         const updateUtilities = await Utilities.updateOne(
-//             { _id: req.params.utilitiesId }, 
-//             { $set : { name : req.body.name , type: req.body.type}, });
-//         res.json(updateUtilities);
-//     } catch(err){
-//         res.json({message: err})
-//     }
-// })
-
+//UPDATE ROLE
+router.patch('/:roleUserId', Controller.Role_Controller.UpdateRoleById);
 
 module.exports = router;
 

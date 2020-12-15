@@ -1,15 +1,17 @@
 const express = require('express');
-const util_router = express.Router();
+const router = express.Router();
 
-const Util = require('../models/User');
+const Controller = require('../Controllers/index');
 
-util_router.get('/',(req, res) => {
-    res.send('We are on User');
-});
+router.get('/',Controller.User_Controller.getAllUser);
 
-util_router.post('/', (req,res)=>{
-    console.log(req.body);
-});
+router.post('/', Controller.User_Controller.postUser);
 
-module.exports = util_router;
+router.get('/:userId', Controller.User_Controller.getUserById);
+
+router.delete('/:userId', Controller.User_Controller.deleteUser);
+
+router.patch('/:userId', Controller.User_Controller.updateUser);
+
+module.exports = router;
 

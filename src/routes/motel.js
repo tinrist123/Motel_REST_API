@@ -15,43 +15,17 @@ router.get('/', Controller.Motel_Controller.getAllRoom);
 //GET ALL MOTEL IS CONFIRMED
 router.get('/isConfirm', Controller.Motel_Controller.getAllConfirmedRoom);
 
+//POST MOTEL
+router.post('/', Controller.Motel_Controller.postRoom);
 
+//GET MOTEL BY ID
+router.get('/:roomId', Controller.Motel_Controller.getMotelById);
 
+//DELETE MOTEL
+router.delete('/:roomId', Controller.Motel_Controller.deleteRoom);
 
-
-// //SPECIFIC UTILITIES
-// router.get('/:utilitiesId', async (req,res) => {
-//     try{
-//         const utilities = await Utilities.findById(req.params.utilitiesId);
-//         res.json(utilities);
-//     } catch(err) { 
-//         res.json({message: err});
-//     }
-// } )
-
-// //DELETE UTILITIES
-// router.delete('/:utilitiesId', async (req,res) => {
-//     try{
-//         const deleteUtilities = await Utilities.remove({_id : req.params.utilitiesId});
-//         res.json(deleteUtilities);
-//     } catch(err) {
-//         res.json({message: err});
-//     }
-// })
-
-
-// //UPDATE UTILITIES
-// router.patch('/:utilitiesId',async (req,res) => {
-//     try{
-//         const updateUtilities = await Utilities.updateOne(
-//             { _id: req.params.utilitiesId }, 
-//             { $set : { name : req.body.name , type: req.body.type}, });
-//         res.json(updateUtilities);
-//     } catch(err){
-//         res.json({message: err})
-//     }
-// })
-
+//UPDATE MOTEL
+router.patch('/:roomId', Controller.Motel_Controller.updateRoom);
 
 module.exports = router;
 

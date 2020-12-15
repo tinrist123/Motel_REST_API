@@ -3,6 +3,7 @@ const MotelCategory = require('../models/MotelCategory');
 const router = express.Router();
 
 const Controller = require('../Controllers/index');
+const Utilities = require('../models/Utilities');
 
 
 //GET ALL CATEGORIES
@@ -17,19 +18,8 @@ router.get('/:categoryId', Controller.MotelCategory_Controller.GetCategoryById);
 //DELETE UTILITIES
 router.delete('/:categoryId', Controller.MotelCategory_Controller.DeleteCateById);
 
-
 //UPDATE UTILITIES
-// router.patch('/:utilitiesId',async (req,res) => {
-//     try{
-//         const updateUtilities = await Utilities.updateOne(
-//             { _id: req.params.utilitiesId }, 
-//             { $set : { name : req.body.name , type: req.body.type}, });
-//         res.json(updateUtilities);
-//     } catch(err){
-//         res.json({message: err})
-//     }
-// })
-
+router.patch('/:categoryId', Controller.MotelCategory_Controller.UpdateCateById);
 
 module.exports = router;
 

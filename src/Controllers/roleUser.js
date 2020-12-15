@@ -48,6 +48,20 @@ module.exports = {
              res.json({message: err});
          }
     },
+
+    UpdateRoleById : async (req,res,next) => {
+        try {
+            const id = req.params.roleUserId;
+            const updates = req.body;
+            const option = { new: true };
+    
+            const result = await RoleUser.findByIdAndUpdate(id, updates, option);
+            res.send(result);
+        } catch (err) {
+            res.json({message: err});
+        }
+    },
+
 }
 
 
