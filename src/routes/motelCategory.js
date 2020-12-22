@@ -1,25 +1,21 @@
-const express = require('express');
-const MotelCategory = require('../models/MotelCategory');
+const express = require("express");
+const MotelCategory = require("../models/MotelCategory");
 const router = express.Router();
 
-const Controller = require('../Controllers/index');
-const Utilities = require('../models/Utilities');
-
+const { MotelCategory_Controller } = require("../Controllers/index");
 
 //GET ALL CATEGORIES
-router.get('/', Controller.MotelCategory_Controller.GetAllCategory);
+router.get("/", MotelCategory_Controller.getAllCate);
 
 //POST UTILITIES
-router.post('/', Controller.MotelCategory_Controller.PostCategory);
+router.post("/", MotelCategory_Controller.postCate);
 
 //SPECIFIC UTILITIES
-router.get('/:categoryId', Controller.MotelCategory_Controller.GetCategoryById);
 
 //DELETE UTILITIES
-router.delete('/:categoryId', Controller.MotelCategory_Controller.DeleteCateById);
+router.delete("/:categoryId", MotelCategory_Controller.deleteCate);
 
 //UPDATE UTILITIES
-router.patch('/:categoryId', Controller.MotelCategory_Controller.UpdateCateById);
+router.patch("/:categoryId", MotelCategory_Controller.updateCate);
 
 module.exports = router;
-

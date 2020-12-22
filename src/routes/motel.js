@@ -1,31 +1,29 @@
 //con thieu CUD
-const express = require('express');
-const Motel = require('../models/Motel');
+const express = require("express");
+const Motel = require("../models/Motel");
 const router = express.Router();
 
-const Controller = require('../Controllers/index');
+const { Motel_Controller } = require("../Controllers/index");
 
 //POST MOTEL
-//router.post('/', Motel_Controller.getAllRoom);
-
+router.post("/", Motel_Controller.postRoom);
 
 //GET ALL MOTEL
-router.get('/', Controller.Motel_Controller.getAllRoom);
+router.get("/", Motel_Controller.getAllRoom);
 
 //GET ALL MOTEL IS CONFIRMED
-router.get('/isConfirm', Controller.Motel_Controller.getAllConfirmedRoom);
+router.get("/isConfirm", Motel_Controller.getAllConfirmedRoom);
 
 //POST MOTEL
-router.post('/', Controller.Motel_Controller.postRoom);
+router.post("/", Motel_Controller.postRoom);
 
 //GET MOTEL BY ID
-router.get('/:roomId', Controller.Motel_Controller.getMotelById);
+router.get("/:roomId", Motel_Controller.getMotelById);
 
 //DELETE MOTEL
-router.delete('/:roomId', Controller.Motel_Controller.deleteRoom);
+router.delete("/:roomId", Motel_Controller.deleteRoom);
 
 //UPDATE MOTEL
-router.patch('/:roomId', Controller.Motel_Controller.updateRoom);
+router.patch("/:roomId", Motel_Controller.UpdateRoom);
 
 module.exports = router;
-

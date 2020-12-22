@@ -1,4 +1,9 @@
-const { Motel, MotelCategory, Utils, User } = require("../../src/models/index");
+const {
+  Motel,
+  MotelCategory,
+  Utility,
+  User,
+} = require("../../src/models/index");
 const listUtilityTypeName = [
   "room_bathroom",
   "parking_situation",
@@ -24,7 +29,7 @@ const faker = require("faker");
 function detectUtility(propsName) {
   return new Promise((resolve, reject) => {
     try {
-      const utility = Utils.findOne({ type: propsName });
+      const utility = Utility.findOne({ type: propsName });
       resolve(utility);
     } catch (err) {
       reject(err);
@@ -41,6 +46,7 @@ const createUtilitiesList = async (listUtilityType) => {
 
 const randomHostMotel = async () => {
   const data = await User.findOne({}).skip(faker.random.number(100)).limit(1);
+  console.log(data);
   return await Promise.resolve(data._id);
 };
 
@@ -61,6 +67,7 @@ async function MigrateMotel() {
     let listUtility = await createUtilitiesList(listUtilityType);
 
     let id_host = await randomHostMotel();
+    console.log(id_host);
     let newMotel = {
       id_motel_host: id_host,
       name_motel: motelDetail.room_name,
@@ -85,6 +92,8 @@ async function MigrateMotel() {
       full_address: motelDetail.full_address_object,
       total_view: 0,
       exact_room_address: motelDetail.exact_room_address,
+      created_date: motelDetail.created_date,
+      updated_date: motelDetail.updated_date,
     };
     let motel = new Motel(newMotel);
     try {

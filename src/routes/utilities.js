@@ -1,23 +1,17 @@
-const express = require('express');
-const Utilities = require('../models/Utilities');
+const express = require("express");
 const router = express.Router();
-const Controller =  require('../Controllers/index');
-
+const { Utilities_Controller } = require("../Controllers");
 
 //GET ALL UTILITIES
-router.get('/', Controller.Utilities_Controller.GetAllUtils);
+router.get("/", Utilities_Controller.getAllUtilities);
 
 //POST UTILITIES
-router.post('/', Controller.Utilities_Controller.PostUtils);
-
-// //SPECIFIC UTILITIES
-router.get('/:utilitiesId', Controller.Utilities_Controller.GetUtilById);
+router.post("/", Utilities_Controller.postUtility);
 
 //DELETE UTILITIES
-router.delete('/:utilitiesId', Controller.Utilities_Controller.DeleteUtilsById);
+router.delete("/:utilitiesId", Utilities_Controller.deleteUtility);
 
 //UPDATE UTILITIES
-router.patch('/:utilitiesId',Controller.Utilities_Controller.UpdateUtilsById);
+router.patch("/:utilitiesId", Utilities_Controller.updateUtility);
 
 module.exports = router;
-

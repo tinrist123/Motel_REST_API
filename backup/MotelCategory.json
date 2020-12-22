@@ -1,7 +1,7 @@
 {
   "category" : [
     {
-      "room_type" : "Notshared",
+      "room_type" : "NotShared",
       "name" : "Phòng cho thuê"
     },
     {

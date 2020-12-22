@@ -23,22 +23,14 @@ mongoose.connect(
 
     // List Function migrate First
     {
-      // MigrateUtils();
       // MigrateMotelCate();
+      // MigrateUtils();
       // MigrateRoleUser();
-
-    }
-    // The second
-    {
-      //  createFakeUser ();
-    }
-    // The third
-    {
       // MigrateUser();
     }
-    // the final
+    // the second
     {
-      MigrateMotel();
+      // MigrateMotel();
     }
   }
 );
