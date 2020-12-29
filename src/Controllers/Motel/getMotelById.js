@@ -3,8 +3,10 @@ const { Motel } = require("../../models");
 //SPECIFIC ROOM
 const getMotelById = async (req, res) => {
   let response = { success: 0, data: [], message: "" };
+
+  //console.log(req.params.id);
   try {
-    const motel = await Motel.findById(req.params.roomId)
+    const motel = await Motel.findById(req.params.id)
       .populate("util_list")
       .populate("id_motel_host");
     res.set({
@@ -16,8 +18,13 @@ const getMotelById = async (req, res) => {
     if (motel) {
       response.success = 1;
       response.data = motel;
-      res.json(response);
+      res.render("motels/edit-motel",{
+        id: req.params.id,
+        motel_category: motel.motel_category,
+        name_motel: motel.name_motel
+      });
     }
+    
   } catch (err) {
     res.status(404).json({ ...response, message: err });
   }

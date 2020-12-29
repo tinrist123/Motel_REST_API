@@ -3,15 +3,30 @@ const router = express.Router();
 const { Utilities_Controller } = require("../Controllers");
 
 //GET ALL UTILITIES
-router.get("/", Utilities_Controller.getAllUtilities);
+router.get("/admin", Utilities_Controller.getAllUtilities);
 
 //POST UTILITIES
-router.post("/", Utilities_Controller.postUtility);
+router.get("/admin/add-utility",(req,res) => {
+    const name ="";
+    const iconUrl ="";
+    const type = "";
+    res.render('../views/utilities/add-utility.ejs',{
+        name: name,
+        iconUrl:iconUrl,
+        type:type,
+        message: req.flash("message")
+    });
+});
+
+router.post("/admin/add-utility", Utilities_Controller.postUtility);
 
 //DELETE UTILITIES
-router.delete("/:utilitiesId", Utilities_Controller.deleteUtility);
+router.get("/admin/delete-utility/:utilitiesId", Utilities_Controller.deleteUtility);
 
 //UPDATE UTILITIES
-router.patch("/:utilitiesId", Utilities_Controller.updateUtility);
+router.get("/admin/edit-utility/:utilitiesId", Utilities_Controller.getUtilityById);
+
+
+router.post("/admin/edit-utility/:utilitiesId", Utilities_Controller.updateUtility);
 
 module.exports = router;

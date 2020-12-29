@@ -9,21 +9,27 @@ const { Motel_Controller } = require("../Controllers/index");
 router.post("/", Motel_Controller.postRoom);
 
 //GET ALL MOTEL
-router.get("/", Motel_Controller.getAllRoom);
+router.get("/admin", Motel_Controller.getAllRoom);
 
 //GET ALL MOTEL IS CONFIRMED
-router.get("/isConfirm", Motel_Controller.getAllConfirmedRoom);
+router.get("/admin/show-confirmed-motel", Motel_Controller.getAllConfirmedRoom);
 
 //POST MOTEL
 router.post("/", Motel_Controller.postRoom);
 
 //GET MOTEL BY ID
-router.get("/:roomId", Motel_Controller.getMotelById);
+// router.get("/:roomId", Motel_Controller.getMotelById);
 
 //DELETE MOTEL
-router.delete("/:roomId", Motel_Controller.deleteRoom);
+router.get("/admin/delete-motel/:id", Motel_Controller.deleteRoom);
 
 //UPDATE MOTEL
-router.patch("/:roomId", Motel_Controller.UpdateRoom);
+router.get("/admin/edit-motel/:id", Motel_Controller.getMotelById);
+
+//
+router.get("/admin/all-pending-motel", Motel_Controller.getAllPendingRoom);
+
+
+router.get("/admin/confirm-room/:id", Motel_Controller.confirmRoom)
 
 module.exports = router;

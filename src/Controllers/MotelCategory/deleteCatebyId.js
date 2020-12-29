@@ -2,10 +2,14 @@ const { MotelCategory } = require("../../models");
 
 const deleteCateById = async (req, res) => {
   try {
-    const deleteCategory = await MotelCategory.remove({
-      _id: req.params.categoryId,
+    await MotelCategory.deleteOne({
+      _id: req.params.id,
     });
-    res.status(200).json(deleteCategory);
+
+    //res.render('/categories/categories');
+    res.redirect('/categories/admin');
+    //res.render('/categories/categories', { message: req.flash('success', 'Data was deleted')});
+
   } catch (err) {
     res.status(404).json({ message: err });
   }

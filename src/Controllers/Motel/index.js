@@ -4,7 +4,8 @@ const deleteRoom = require("./deleteRoom");
 const UpdateRoom = require("./UpdateRoom");
 const getMotelById = require("./getMotelById");
 const postRoom = require("./postRoom");
-
+const getAllPendingRoom = require("./getAllPendingRoom");
+const confirmRoom = require("./confirmRoom");
 module.exports = {
   getAllRoom,
   getAllConfirmedRoom,
@@ -12,4 +13,6 @@ module.exports = {
   UpdateRoom,
   getMotelById,
   postRoom,
+  getAllPendingRoom,
+  confirmRoom
 };

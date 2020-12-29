@@ -1,7 +1,7 @@
 const {
   Motel,
   MotelCategory,
-  Utility,
+  Utilities,
   User,
 } = require("../../src/models/index");
 const listUtilityTypeName = [
@@ -29,7 +29,7 @@ const faker = require("faker");
 function detectUtility(propsName) {
   return new Promise((resolve, reject) => {
     try {
-      const utility = Utility.findOne({ type: propsName });
+      const utility = Utilities.findOne({ type: propsName });
       resolve(utility);
     } catch (err) {
       reject(err);
@@ -90,6 +90,7 @@ async function MigrateMotel() {
       number_vacancies_available_in_room:
         motelDetail.number_vacancies_available_in_room,
       full_address: motelDetail.full_address_object,
+      isPending : true,
       total_view: 0,
       exact_room_address: motelDetail.exact_room_address,
       created_date: motelDetail.created_date,

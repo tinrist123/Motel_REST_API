@@ -1,0 +1,33 @@
+<%- include ('../partials/header.ejs') %>
+
+
+<h2 class="page-title">Motels</h2>
+<a href="/motels/admin/all-pending-motel" class="btn btn-primary">Show all pending room</a>
+<br><br>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Motel</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% motel.forEach(function(motel){ %>
+            <tr>
+                <td><%= motel.name_motel %></td>
+                <td><a class="confirmDeletion" href="/motels/admin/delete-motel/<%= motel._id %>"">Delete</a></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<%- include('../partials/footer.ejs') %>
+
+<script>
+$('a.confirmDeletion').on('click', function () {
+    if (!confirm('Confirm deletion'))
+        return false;
+});
+</script>

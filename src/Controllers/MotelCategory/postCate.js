@@ -1,17 +1,17 @@
 const { MotelCategory } = require("../../models");
 
 const postCategory = async (req, res) => {
-  //console.log(req.body);
-  const category = new MotelCategory({
+  console.log(req.body);
+  new MotelCategory({
     cate_name: req.body.cate_name,
     room_type: req.body.room_type,
+  }).save(function(err, prd){
+    if(err) res.json(err);
+    else { 
+      req.flash("message","Category Successfully Added !");
+      res.redirect("./add-category");
+    } 
   });
-  try {
-    const saveUtilities = await category.save();
-    res.status(200).json(saveUtilities);
-  } catch (err) {
-    res.status(404).json({ message: err });
-  }
 };
 
 module.exports = postCategory;

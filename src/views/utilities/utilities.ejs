@@ -1,0 +1,34 @@
+<%- include ('../partials/header.ejs') %>
+
+<h2 class="page-title">Utilities</h2>
+<a href="/utilities/admin/add-utility" class="btn btn-primary">Add a new utility</a>
+<br><br>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Utilities</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% util.forEach(function(util){ %>
+        <tr>
+            <td><%= util.name %></td>
+            <td><a href="/utilities/admin/edit-utility/<%= util._id %>">Edit</a></td>
+            <td><a class="confirmDeletion" href="/utilities/admin/delete-utility/<%= util._id %>">Delete</a></td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<script>
+    $('a.confirmDeletion').on('click', function () {
+        if (!confirm('Confirm deletion'))
+            return false;
+    });
+    </script>
+
+<%- include('../partials/footer.ejs') %>

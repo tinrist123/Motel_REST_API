@@ -4,6 +4,7 @@ const MotelCategory = require("./MotelCategory.js");
 const FullAddress = require("./FullAddress");
 const Utils = require("./Utilities");
 const User = require("./User");
+const { Blob } = require("node-fetch");
 
 const MotelSchema = mongoose.Schema(
   {
@@ -89,6 +90,10 @@ const MotelSchema = mongoose.Schema(
       type: Boolean,
       required: true,
     },
+    isPending: {
+      type: Boolean,
+      required: true,
+    }
   },
   {
     timestamps: {
