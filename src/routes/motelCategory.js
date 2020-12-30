@@ -7,15 +7,7 @@ const { MotelCategory_Controller } = require("../Controllers/index");
 //GET ALL CATEGORIES
 router.get("/admin", MotelCategory_Controller.getAllCate);
 
-router.get("/admin/add-category",(req,res) => {
-    const cate_name ="";
-    const room_type ="";
-    res.render('../views/categories/add-category.ejs',{
-        cate_name: cate_name,
-        room_type: room_type,
-        message: req.flash('message')
-    });
-});
+router.get("/admin/add-category",MotelCategory_Controller.showAddCategory);
 
 
 //POST UTILITIES

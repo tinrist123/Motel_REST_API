@@ -6,17 +6,7 @@ const { Utilities_Controller } = require("../Controllers");
 router.get("/admin", Utilities_Controller.getAllUtilities);
 
 //POST UTILITIES
-router.get("/admin/add-utility",(req,res) => {
-    const name ="";
-    const iconUrl ="";
-    const type = "";
-    res.render('../views/utilities/add-utility.ejs',{
-        name: name,
-        iconUrl:iconUrl,
-        type:type,
-        message: req.flash("message")
-    });
-});
+router.get("/admin/add-utility", Utilities_Controller.showAddUtilities);
 
 router.post("/admin/add-utility", Utilities_Controller.postUtility);
 
