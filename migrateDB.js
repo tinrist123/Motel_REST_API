@@ -30,7 +30,7 @@ mongoose.connect(
     }
     // the second
     {
-      // MigrateMotel();
+      MigrateMotel();
     }
   }
 );

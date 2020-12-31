@@ -37,7 +37,6 @@ const MotelSchema = mongoose.Schema(
     },
     isConfirmed: {
       type: Boolean,
-      required: true,
     },
     square: {
       type: Number,
@@ -64,6 +63,9 @@ const MotelSchema = mongoose.Schema(
         ref: Utils,
       },
     ],
+    isPending: {
+      type: Boolean,
+    },
     sex_allowed: {
       // female / male <-- any (both of them)
       type: String,
