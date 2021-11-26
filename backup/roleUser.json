@@ -1,0 +1,14 @@
+{
+  "roleUser": [
+    {
+      "name_role": "Motel Host",
+      "note":
+        "Chủ phòng trọ có thể đăng, thêm, xóa sửa thông tin về phòng trọ của mình, ngoài ra còn thể chỉnh sửa thông tin cá nhân"
+    },
+    {
+      "name_role": "Admin",
+      "note":
+        "Có quyền cao nhất trong website quản lí, thực hiện mọi hành động ở trang quản lí"
+    }
+  ]
+}

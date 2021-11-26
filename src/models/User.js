@@ -1,75 +1,43 @@
+const RoleUser = require("./RoleUser");
 const mongoose = require("mongoose");
-
 const UserSchema = mongoose.Schema(
   {
-    name: {
-      type: String,
-      require: true,
+    id_role: {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: RoleUser,
     },
-    email: {
-      type: String,
-    },
-    password: {
+    first_name: {
       type: String,
     },
-    dob: {
-      type: Date,
-    },
-    school: {
+    last_name: {
       type: String,
     },
-    distance: {
-      type: Number,
-    },
-    token: {
+    date_of_birth: {
       type: String,
+      required: true,
     },
-    cell_phone: {
+    img_url_avatar: {
       type: String,
+      required: true,
     },
-    matched_count: {
-      type: Number,
+    phone_number: {
+      type: String,
+      required: true,
     },
-    user_info_id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "user_information",
+    address: {
+      type: String,
+      required: true,
     },
-    preference_id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "match_preference",
+    identity_card: {
+      type: String,
+      required: true,
     },
-    images: [
-      {
-        type: String,
-      },
-    ],
-    users_dislike: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "user",
-      },
-    ],
-    users_like: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "user",
-      },
-    ],
-    passions: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "passion",
-      },
-    ],
-    tags: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "tag",
-      },
-    ],
   },
   {
-    timestamps: true,
+    timestamps: {
+      createdAt: "created_date",
+      updatedAt: "updated_date",
+    },
   }
 );
 

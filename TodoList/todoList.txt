@@ -1,0 +1,26 @@
+// Làm xong migrate DB, Nhưng cần phải chạy hiều
+// hot/Fix Migrate Làm trong 1 hàm và gọi 1 lần
+
+// API CRUD TODOLIST
+// Quy API
+//--------- API TRANG HOME, phòng mới nhất , phòng đã xác thức ( isComfirmed trong motel)
+
+//--------- API CHO nút bấm xem tất cả của phòng mới nhất, đã xác thực của trang Home
+// -------- API cho Room detail Lấy 2 model gồm Motel và User (Xem trang Room_detail để biết)
+// Tạm thời làm v đi, xong rồi báo
+
+
+// Làm API cho website, CMS, MerchantApp
+// Làm Search Egine , Elastic Search
+// Add lai full_address de lam Filter vs category
+
+
+
+
+
+
+// Lam FE
+
+// LAM CMS
+
+// LAM MERCHANT APP
