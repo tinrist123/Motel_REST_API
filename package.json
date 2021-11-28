@@ -4,10 +4,9 @@
   "description": "API Phong Tro",
   "main": "app.js",
   "scripts": {
-    "build": "node app.js",
+    "start": "node app.js",
     "dev": "nodemon app.js",
-    "backup": "nodemon migrateDB",
-    "postinstall": "npm run build"
+    "backup": "nodemon migrateDB"
   },
   "author": "Our team",
   "license": "MIT",
