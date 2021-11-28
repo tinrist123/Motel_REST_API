@@ -8,11 +8,11 @@ require("dotenv/config");
 app.use(bodyParser.json());
 
 //Import Routes
-const utilitiesRoute = require("./src/routes/utilities");
-const categoryRoute = require("./src/routes/motelCategory");
-const roleUserRoute = require("./src/routes/roleUser");
-const motelRoute = require("./src/routes/motel");
-const userRoute = require("./src/routes/user");
+// const utilitiesRoute = require("./src/routes/utilities");
+// const categoryRoute = require("./src/routes/motelCategory");
+// const roleUserRoute = require("./src/routes/roleUser");
+// const motelRoute = require("./src/routes/motel");
+// const userRoute = require("./src/routes/user");
 
 app.all("*", (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -25,11 +25,11 @@ app.all("*", (req, res, next) => {
   next();
 });
 //ROUTES
-app.use("/utilities", utilitiesRoute);
-app.use("/category", categoryRoute);
-app.use("/roleUser", roleUserRoute);
-app.use("/motel", motelRoute);
-app.use("/user", userRoute);
+// app.use("/utilities", utilitiesRoute);
+// app.use("/category", categoryRoute);
+// app.use("/roleUser", roleUserRoute);
+// app.use("/motel", motelRoute);
+// app.use("/user", userRoute);
 //HOMEPAGE
 app.get("/", (req, res) => {
   res.send("On homepage");
