@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
 
 //connect to DB
 mongoose.connect(
-  process.env.DB_CONNECTION,
+  "mongodb+srv://fastdelivery:dPSlkPnHQJHGVgLT@fastdeliverydb.cdg7y.mongodb.net/homestay",
   { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true },
   () => {
     console.log("connect to DB");
