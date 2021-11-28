@@ -1,11 +1,10 @@
-const { Utility } = require("../../src/models/index");
+const { Utilities } = require("../../src/models/index");
 
 function MigrateUtils() {
-  const { Utilities } = require("../Utilities.json");
-
-  Utilities.map(async (util) => {
+  const data = require("../Utilities.json");
+  data.data.map(async (util) => {
     const { name, iconUrl, type } = util;
-    const utility = new Utility({
+    const utility = new Utilities({
       iconUrl,
       name,
       type,

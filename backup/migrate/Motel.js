@@ -51,9 +51,9 @@ const randomHostMotel = async () => {
 };
 
 async function MigrateMotel() {
-  const { data } = require("../output.json");
+  let { data } = require("../output.json");
   let countDataAdded = 0;
-  data.map(async (motelDetail) => {
+  data.map(async (motelDetail, index) => {
     const category = await MotelCategory.findOne({
       room_type: motelDetail.room_type,
     });
