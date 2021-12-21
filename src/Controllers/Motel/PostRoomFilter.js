@@ -63,7 +63,7 @@ async function PostRoomFilter(req, res) {
 
   console.log(options);
 
-  let result = await Motel.find(options)
+  let result = await Motel.find()
     .skip(current_page * page_number)
     .limit(page_number)
     .populate("motel_category");
